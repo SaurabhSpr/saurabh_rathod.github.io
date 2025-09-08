@@ -9682,3 +9682,31 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+/* force scrolling on mobile */
+html, body {
+  height: auto !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important; /* smooth scroll on iOS */
+  touch-action: pan-y !important;               /* allow vertical swipe */
+}
+
+/* hero/banner section should not block scroll */
+.hero, .banner, .home-hero, .intro {
+  min-height: 100vh;               /* full screen height */
+  position: relative;
+  overflow: visible !important;
+  touch-action: pan-y !important;
+}
+
+/* background images inside banner should not block touches */
+.hero img, .banner img {
+  pointer-events: none; /* swipe will pass through */
+}
+.hero, .banner {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+
+
+
