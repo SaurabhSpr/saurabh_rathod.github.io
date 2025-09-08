@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
 	  
@@ -860,6 +861,15 @@ My unique combination of a medical background and technical expertise helps me b
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
+  
+  <script>
+  // Fix 100vh issue on mobile browsers
+  function setVh() {
+    document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+  }
+  setVh();
+  window.addEventListener('resize', setVh);
+</script>
     
   </body>
 </html>
